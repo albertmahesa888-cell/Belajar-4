@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DEWA PROMAX CHECKOUT - POLIPONI 2026</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+
+body{
+    background:#f5f5f5;
+    overflow-x:hidden;
+    font-family:Arial,sans-serif;
+}
+
+.grid-bg{
+    background-image:
+    linear-gradient(rgba(0,0,0,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.08) 1px, transparent 1px);
+    background-size:32px 32px;
+}
+
+.shadow-pop{
+    box-shadow:10px 10px 0 #000;
+}
+
+.glow{
+    animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        box-shadow:0 0 10px #ff0;
+    }
+    to{
+        box-shadow:0 0 35px #ff0080;
+    }
+}
+
+.floating{
+    animation:floating 5s ease-in-out infinite;
+}
+
+@keyframes floating{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-10px);}
+    100%{transform:translateY(0px);}
+}
+
+.timerPulse{
+    animation:timerPulse 1s infinite;
+}
+
+@keyframes timerPulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.03);}
+    100%{transform:scale(1);}
+}
+
+</style>
+
+</head>
+
+<body class="grid-bg">
+
+<!-- NAVBAR -->
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b-4 border-black">
+
+<div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+<div>
+<div class="text-3xl font-black">
+POLIPONI
+</div>
+
+<div class="font-bold text-sm">
+OFFICIAL CHECKOUT
+</div>
+</div>
+
+<div class="bg-red-500 text-white px-6 py-3 rounded-full border-4 border-black shadow-pop timerPulse">
+
+<div class="text-sm font-bold">
+SELESAIKAN DALAM
+</div>
+
+<div id="countdown" class="text-3xl font-black">
+15:00
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+<section class="py-8 px-6">
+
+<div class="max-w-7xl mx-auto">
+
+<div class="bg-white border-4 border-black rounded-[35px] p-3 shadow-pop floating overflow-hidden">
+
+<img src="banner.jpg"
+class="w-full h-[220px] lg:h-[320px] rounded-[28px] object-cover">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TITLE -->
+<section class="px-6 pb-10">
+
+<div class="max-w-7xl mx-auto text-center">
+
+<div class="inline-block bg-green-400 px-8 py-4 text-2xl font-black shadow-pop rotate-[-2deg] mb-8">
+CHECKOUT TIKET RESMI
+</div>
+
+<h1 class="text-5xl lg:text-7xl font-black leading-none mb-5">
+SHEILA ON 7<br>
+BALI
+</h1>
+
+<p class="text-xl font-bold max-w-4xl mx-auto">
+Lengkapi checkout dan selesaikan pembayaran sebelum waktu habis.
+</p>
+
+</div>
+
+</section>
+
+<!-- MAIN -->
+<section class="pb-32 px-6">
+
+<div class="max-w-7xl mx-auto grid lg:grid-cols-3 gap-10">
+
+<!-- LEFT -->
+<div class="lg:col-span-2 space-y-8">
+
+<form id="checkoutForm">
+
+<!-- DATA -->
+<div class="bg-white border-4 border-black rounded-[40px] p-10 shadow-pop">
+
+<div class="flex items-center gap-5 mb-10">
+
+<div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-3xl font-black">
+1
+</div>
+
+<div>
+<div class="text-4xl font-black">
+DATA PEMESAN
+</div>
+
+<div class="font-bold text-gray-500">
+Semua data wajib diisi
+</div>
+</div>
+
+</div>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div>
+<label class="block text-xl font-black mb-3">
+Nama Lengkap
+</label>
+
+<input required type="text"
+placeholder="Masukkan nama lengkap"
+class="w-full border-4 border-black rounded-2xl px-6 py-5 text-xl font-bold outline-none focus:scale-[1.02] transition">
+</div>
+
+<div>
+<label class="block text-xl font-black mb-3">
+Email
+</label>
+
+<input required type="email"
+placeholder="Masukkan email aktif"
+class="w-full border-4 border-black rounded-2xl px-6 py-5 text-xl font-bold outline-none focus:scale-[1.02] transition">
+</div>
+
+<div>
+<label class="block text-xl font-black mb-3">
+Nomor WhatsApp
+</label>
+
+<input required type="text"
+placeholder="08xxxxxxxx"
+class="w-full border-4 border-black rounded-2xl px-6 py-5 text-xl font-bold outline-none focus:scale-[1.02] transition">
+</div>
+
+<div>
+<label class="block text-xl font-black mb-3">
+Kota
+</label>
+
+<input required type="text"
+placeholder="Masukkan kota"
+class="w-full border-4 border-black rounded-2xl px-6 py-5 text-xl font-bold outline-none focus:scale-[1.02] transition">
+</div>
+
+</div>
+
+</div>
+
+<!-- TICKET -->
+<div class="bg-white border-4 border-black rounded-[40px] p-10 shadow-pop">
+
+<div class="flex items-center gap-5 mb-10">
+
+<div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-3xl font-black">
+2
+</div>
+
+<div>
+<div class="text-4xl font-black">
+JUMLAH TIKET
+</div>
+
+<div class="font-bold text-gray-500">
+Pilih tiket bundling
+</div>
+</div>
+
+</div>
+
+<div class="space-y-8">
+
+<!-- PREMIUM -->
+<div class="border-4 border-black rounded-[30px] p-7">
+
+<div class="flex justify-between items-center mb-6">
+
+<div>
+<div class="text-3xl font-black">
+PREMIUM
+</div>
+
+<div class="font-bold text-gray-500">
+Bundling 6 Orang
+</div>
+</div>
+
+<div class="text-4xl font-black">
+Rp2.510.000
+</div>
+
+</div>
+
+<div class="flex items-center gap-5">
+
+<button type="button"
+onclick="minusPremium()"
+class="w-16 h-16 bg-black text-white rounded-full text-4xl font-black hover:scale-110 transition">
+-
+</button>
+
+<div id="premiumQty"
+class="text-6xl font-black w-20 text-center">
+0
+</div>
+
+<button type="button"
+onclick="plusPremium()"
+class="w-16 h-16 bg-black text-white rounded-full text-4xl font-black hover:scale-110 transition">
++
+</button>
+
+</div>
+
+</div>
+
+<!-- FAST TRACK -->
+<div class="border-4 border-black rounded-[30px] p-7 bg-yellow-300">
+
+<div class="flex justify-between items-center mb-6">
+
+<div>
+<div class="text-3xl font-black">
+FAST TRACK
+</div>
+
+<div class="font-bold text-gray-700">
+Bundling 6 Orang
+</div>
+</div>
+
+<div class="text-4xl font-black">
+Rp3.510.000
+</div>
+
+</div>
+
+<div class="flex items-center gap-5">
+
+<button type="button"
+onclick="minusFast()"
+class="w-16 h-16 bg-black text-white rounded-full text-4xl font-black hover:scale-110 transition">
+-
+</button>
+
+<div id="fastQty"
+class="text-6xl font-black w-20 text-center">
+0
+</div>
+
+<button type="button"
+onclick="plusFast()"
+class="w-16 h-16 bg-black text-white rounded-full text-4xl font-black hover:scale-110 transition">
++
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- QRIS -->
+<div id="paymentSection"
+class="hidden bg-white border-4 border-black rounded-[40px] p-10 shadow-pop">
+
+<div class="flex items-center gap-5 mb-10">
+
+<div class="w-16 h-16 bg-black text-white rounded-full flex items-center justify-center text-3xl font-black">
+3
+</div>
+
+<div>
+<div class="text-4xl font-black">
+PEMBAYARAN QRIS
+</div>
+
+<div class="font-bold text-gray-500">
+Scan QR untuk pembayaran
+</div>
+</div>
+
+</div>
+
+<div class="text-center">
+
+<div class="bg-black text-white inline-block px-6 py-3 rounded-full font-black mb-8">
+SCAN QRIS
+</div>
+
+<img src="qris-pembayaran.jpg"
+class="w-[320px] mx-auto rounded-[30px] border-4 border-black shadow-pop glow">
+
+<div class="mt-8 text-2xl font-black">
+TOTAL PEMBAYARAN
+</div>
+
+<div id="totalDisplay"
+class="text-6xl font-black text-green-500 mt-4">
+Rp0
+</div>
+
+</div>
+
+</div>
+
+<!-- AGREEMENT -->
+<div class="bg-yellow-300 border-4 border-black rounded-[40px] p-10 shadow-pop">
+
+<div class="flex items-start gap-5">
+
+<input required type="checkbox"
+class="w-7 h-7 mt-2">
+
+<div>
+
+<div class="text-3xl font-black mb-4">
+SYARAT & KETENTUAN
+</div>
+
+<p class="text-lg font-bold leading-relaxed">
+Saya telah membaca dan menyetujui seluruh syarat dan ketentuan pembelian tiket POLIPONI 2026.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<button type="submit"
+class="w-full bg-green-400 text-black py-6 rounded-full text-3xl font-black hover:scale-[1.02] transition glow border-4 border-black">
+KONFIRMASI PEMBAYARAN
+</button>
+
+</form>
+
+</div>
+
+<!-- RIGHT -->
+<div class="space-y-8">
+
+<!-- SUMMARY -->
+<div class="bg-black text-white rounded-[40px] p-10 border-4 border-white shadow-pop sticky top-32">
+
+<div class="text-4xl font-black mb-10">
+DETAIL PESANAN
+</div>
+
+<div class="space-y-6 mb-10">
+
+<div class="flex justify-between items-center">
+
+<div>
+<div class="text-2xl font-black">
+PREMIUM
+</div>
+
+<div class="font-bold text-gray-400">
+x <span id="premiumSummary">0</span>
+</div>
+</div>
+
+<div class="text-2xl font-black"
+id="premiumTotal">
+Rp0
+</div>
+
+</div>
+
+<div class="flex justify-between items-center">
+
+<div>
+<div class="text-2xl font-black">
+FAST TRACK
+</div>
+
+<div class="font-bold text-gray-400">
+x <span id="fastSummary">0</span>
+</div>
+</div>
+
+<div class="text-2xl font-black"
+id="fastTotal">
+Rp0
+</div>
+
+</div>
+
+<div class="border-t-4 border-dashed border-white pt-6">
+
+<div class="flex justify-between items-center">
+
+<div class="text-3xl font-black">
+TOTAL
+</div>
+
+<div id="grandTotal"
+class="text-5xl font-black text-green-400">
+Rp0
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="bg-red-500 rounded-[30px] p-6 text-center border-4 border-black timerPulse">
+
+<div class="text-xl font-black">
+SISA WAKTU CHECKOUT
+</div>
+
+<div id="countdown2"
+class="text-6xl font-black">
+15:00
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+gsap.from('h1',{
+    y:100,
+    opacity:0,
+    duration:1.2
+});
+
+gsap.from('.shadow-pop',{
+    y:80,
+    opacity:0,
+    stagger:0.15,
+    duration:1
+});
+
+let premium=0;
+let fast=0;
+
+const premiumPrice=2510000;
+const fastPrice=3510000;
+
+function format(num){
+    return new Intl.NumberFormat('id-ID').format(num);
+}
+
+function update(){
+
+    document.getElementById('premiumQty').innerHTML=premium;
+    document.getElementById('fastQty').innerHTML=fast;
+
+    document.getElementById('premiumSummary').innerHTML=premium;
+    document.getElementById('fastSummary').innerHTML=fast;
+
+    document.getElementById('premiumTotal').innerHTML=
+    'Rp'+format(premium*premiumPrice);
+
+    document.getElementById('fastTotal').innerHTML=
+    'Rp'+format(fast*fastPrice);
+
+    const total=
+    (premium*premiumPrice)+(fast*fastPrice);
+
+    document.getElementById('grandTotal').innerHTML=
+    'Rp'+format(total);
+
+    document.getElementById('totalDisplay').innerHTML=
+    'Rp'+format(total);
+
+    if(total>0){
+        document.getElementById('paymentSection')
+        .classList.remove('hidden');
+    }
+
+}
+
+function plusPremium(){
+
+    if(premium>=3)return;
+
+    premium++;
+
+    update();
+}
+
+function minusPremium(){
+
+    if(premium<=0)return;
+
+    premium--;
+
+    update();
+}
+
+function plusFast(){
+
+    if(fast>=3)return;
+
+    fast++;
+
+    update();
+}
+
+function minusFast(){
+
+    if(fast<=0)return;
+
+    fast--;
+
+    update();
+}
+
+let time=15*60;
+
+function countdown(){
+
+    let minutes=Math.floor(time/60);
+    let seconds=time%60;
+
+    seconds=seconds<10?'0'+seconds:seconds;
+
+    document.getElementById('countdown')
+    .innerHTML=`${minutes}:${seconds}`;
+
+    document.getElementById('countdown2')
+    .innerHTML=`${minutes}:${seconds}`;
+
+    if(time>0){
+        time--;
+    }
+
+}
+
+setInterval(countdown,1000);
+
+document.getElementById('checkoutForm')
+.addEventListener('submit',function(e){
+
+    if((premium+fast)<=0){
+
+        e.preventDefault();
+
+        alert('Pilih tiket terlebih dahulu');
+
+        return;
+    }
+
+    alert('Pembayaran berhasil diproses');
+
+});
+
+</script>
+
+</body>
+</html>
